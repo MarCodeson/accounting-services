@@ -1,0 +1,102 @@
+.container{
+    background-color: white;
+    max-width: 60rem;
+    min-width: 27rem;
+    width: 90%;
+    
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+ 
+   
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 7%;
+}
+.input{
+   width: 80%;
+   min-width: 12rem;
+   height: 2rem;
+   border: rgb(228, 228, 228) solid 1px;
+   border-radius: 2px;
+   margin: 0;
+   padding: 0 0.5rem;
+ 
+}
+.input:focus, .longInput:focus, .message{
+    outline: none !important;
+   
+}
+.longInput{
+    
+    width: 90%;
+    height: 2rem;
+    border: rgb(228, 228, 228) solid 1px;
+   border-radius: 2px;
+   margin: 0;
+   padding: 0 0.5rem;
+}
+.message{
+    resize: none; 
+    padding:  0.5rem;
+  width: 90% !important; 
+  border: rgb(228, 228, 228) solid 1px;
+  border-radius: 2px;
+  height: 5rem !important;
+
+}
+.button{
+    background-color: #333;
+    color: white;
+    margin: 0 auto;
+    width: 90%;
+    height: 3rem;
+    font-weight: bold;
+    border: none;
+    margin-top: 5%;
+    cursor: pointer;
+}
+.formGroup, .newFormGroup{
+    display: flex;
+   
+    align-items: center;
+  
+
+}
+.newFormGroup{
+    column-gap: 2rem;
+    flex-wrap: wrap;
+   margin: 2% 0;
+   width: 97%;
+}
+.checkboxLabel{
+    font-weight: bold;
+    margin: 3%;
+}
+.formSubgroup{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 100rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.formSubgroup label, .formSubgroup input , .formSubgroup textarea{
+
+    font-weight: bold;
+
+}
+.longLabel{
+    width: 92%;
+}
+.shortLabel{
+    width: 85%;
+}
+
+@media only screen and (max-width:960px) {
+    .container{
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,122 @@
+.passwordScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 500rem;
+  
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 0 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+.name{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.viewMore{
+   
+    background-color: rgb(247, 234, 220);
+  
+   width: 100%;
+    position: absolute;
+    left: 0;
+    top: 10rem;
+   height: 15rem;
+}
+.viewMore li{
+   margin-left: 1rem;
+   font-size: 1.2rem;
+   list-style: none;
+}
+.viewLess{
+    display: none;
+}
+.closeIcon{
+    cursor: pointer;
+   align-items: center;
+    display: flex;
+    column-gap: 2rem;
+    font-weight: bold;
+    text-decoration: underline 1px solid;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 100rem;
+    width: 90%;
+    max-width: 50rem;
+    min-width: 25rem;
+}
+.appointment{
+    border-top: #d8d2d2 solid 1px;
+    width: 100%;
+    min-width: 25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+.app_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.app_right{}
+.nav{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+    column-gap: 5rem;
+    font-size: 1.5rem;
+}
+.Untriggered{
+    text-decoration: underline solid 4px white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.triggered{
+    text-decoration: underline solid 4px #333;
+    font-weight: bold;
+    
+}
+.input{
+    width: 80%;
+    min-width: 12rem;
+    font-size: 2rem;
+    height: 3rem;
+    border: rgb(228, 228, 228) solid 1px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0 0.5rem;
+  
+ }
+ .input:focus{
+     outline: none !important;
+    
+ }
+ .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    width: 12rem;
+    height: 3rem;
+    font-weight: bold;
+    margin: 3rem;
+    cursor: pointer;
+ }
+
+ .dashboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 500rem;
+ }

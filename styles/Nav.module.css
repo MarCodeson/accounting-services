@@ -1,0 +1,112 @@
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    width: 100%;
+    height: 4rem;
+    background-color: #FDF4E6;
+    position: relative;
+}
+.logoSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.navSection{
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.menu{
+    cursor: pointer;
+}
+.dropdown, .hidden{
+    position: absolute;
+top: 4rem;
+left: 0;
+
+width: 100%;
+background-color: #FDF4E6;
+
+transition: height ease 400ms;
+z-index: 1000000;
+}
+.hidden{
+    height: 0;
+    
+}
+.dropdown{
+    height: 24rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    
+}
+.link{
+    width: 100%;
+    
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    ;
+    padding: 0.5rem;
+}
+.hidden div{
+    display: none;
+}
+.dropdown div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.dropdown div:hover, .link:hover{
+    background-color: #333;
+    color: white ;
+    padding: 0.5rem;
+    
+}
+
+.navSection p {
+    margin-right: 2rem;
+font-size: 1rem;
+}
+.ctaSection{
+    display: flex;
+   
+    justify-content: flex-start;
+    align-items: center;
+}
+.ctaSection button{
+    height: 3rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 800;
+   
+}
+
+@media only screen and (max-width:750px) {
+    .navSection p {
+        display: none ;
+    }
+    .ctaSection button{
+        display: none ;
+    }
+}
+
+@media only screen and (min-width:750px) {
+    .menu{
+        display: none;
+    }
+    .dropdown{
+        display: none;
+    }
+}
