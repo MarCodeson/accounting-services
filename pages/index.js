@@ -19,7 +19,7 @@ export default function Home() {
   const testimonials = [
     {
       name: "Kenny Grant",
-      comment: "Ahmad&apos;s strategic budgeting skills have taken our financial planning to the next level. With his personalized guidance and lightning-fast responses, we've achieved financial goals we once thought were out of reach.",
+      comment: "Ahmad's strategic budgeting skills have taken our financial planning to the next level. With his personalized guidance and lightning-fast responses, we've achieved financial goals we once thought were out of reach.",
       img: "/kenny.jpg"
     },
     {
