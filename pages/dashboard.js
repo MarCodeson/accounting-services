@@ -78,58 +78,41 @@ const Dashboard = () => {
     ];
     
     const pendingList = [
-      {
-        firstname: "Abdulla",
-        lastname: "Muhammad",
-        service: "Budget Setting and Monitoring",
-        date: "5/10/23",
-        message: (
-          <>
-            <p>Order Number:<br />1</p>
-            <p>Invoice fee:<br /> £300</p>
-            <p>Method of payment:<br /> Bank Transfer ****7697</p>
-          </>
-        )
-      },
+      
       {
         firstname: "Isaq",
         lastname: "Ahmed",
         service: "Data Entry",
         date: "5/9/23",
-        message: (
-          <>
-            <p>Order Number:<br />2</p>
-            <p>Invoice fee:<br /> £100</p>
-            <p>Method of payment:<br /> Bank Transfer ****7697</p>
-          </>
-        )
+        message: [
+          "Name: Isaq Ahmed",
+          "Phone: 07958931921",
+          "Email: isaqahmed@gmail.com"
+        ]
       },
       {
         firstname: "Karam",
         lastname: "Fagan",
         service: "Budget Setting and Monitoring",
         date: "5/9/23",
-        message: (
-          <>
-            <p>Order Number: <br />3</p>
-            <p>Invoice fee:<br />£400</p>
-            <p>Method of payment: <br />Cash</p>
-          </>
-        )
+        message: [
+          "Name: Karam Fagan",
+          "Phone: 07958563921",
+          "Email: karamfagan@hotmail.co.uk"
+        ]
       },
       {
         firstname: "Joe",
         lastname: "Gogarty",
         service: "Budget Setting and Monitoring",
         date: "5/9/23",
-        message: (
-          <>
-            <p>Order Number:<br />4</p>
-            <p>Invoice fee: <br />£80</p>
-            <p>Method of payment: <br />Cash</p>
-          </>
-        )
+        message: [
+          "Name: Joe Gogarty",
+          "Phone: 07458531921",
+          "Email: joegogarty@gmail.com"
+        ]
       }
+      
     ];
     
     
@@ -155,13 +138,13 @@ const Dashboard = () => {
               {completedMode && viewMore > -1 ? (
                 <ul>
                   {Object.values(completedList[viewMore]).map((value, index) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: value.replace(/\n/g, '<br />') }} />
+                    <li key={index}  />
                   ))}
                 </ul>
               ) : viewMore > -1 ? (
                 <ul>
-                  {Object.values(pendingList[viewMore]).map((value, index) => (
-                    <li key={index} dangerouslySetInnerHTML={{ __html: value.replace(/\n/g, '<br />') }} />
+                  {pendingList[viewMore].message.map((value, index) => (
+                    <li key={index}>{value}</li>
                   ))}
                 </ul>
               ) : null}
@@ -181,7 +164,9 @@ const Dashboard = () => {
                   <p><span className={styles.name}>{app.firstname + " " + app.lastname}</span><br />{app.service}</p>
                 </div>
                 <div className={styles.app_right}>
-                  {app.message}
+                  <button className={styles.button} onClick={()=>{
+                    setViewMore(index)
+                  }}>View Details</button>
                 </div>
               </div>
             ))}
