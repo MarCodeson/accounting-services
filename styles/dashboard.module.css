@@ -66,8 +66,17 @@
     align-items: center;
  
 }
-.app_right{}
+.app_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.app_right p {
+    margin: 2px;
+}
 .nav{
+
     display: flex;
     background-color: white;
     width: 100%;

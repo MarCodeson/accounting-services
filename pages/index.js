@@ -18,20 +18,16 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Kenny Grant",
-      comment: "Ahmad's strategic budgeting skills have taken our financial planning to the next level. With his personalized guidance and lightning-fast responses, we've achieved financial goals we once thought were out of reach.",
+      name: "Ali sherva",
+      comment: "Ahmad is very easy to work with. He was recommended to us by a family member. He dealt with our budgeting and was able to save us an abundance of money, our previous Accountant had missed some obvious things which Ahmad picked up on immediately, amended and resubmitted our budget, saving us a lot of money. He thinks of the little things which others may miss as you have his complete attention and professional service.",
       img: "/kenny.jpg"
     },
     {
-      name: "Emil Schmidt",
-      comment: "We've seen a remarkable improvement in our invoicing process since working with Ahmad. His attention to detail and professional touch elevate every invoice, reflecting our brand's commitment to excellence.",
+      name: "Hamzah sadeeq",
+      comment: "Ahmad has been a vital help in getting my first restaurant off the ground. He's great under pressure and always finds good solutions for any problems we face. I can rely to call him at anytime to solve a problem.",
       img: "/emil.jpg"
     },
-    {
-      name: "Jessica Okurrafor",
-      comment: "Ahmad has been our data entry savior. His efficiency and reliability have freed up our time and eliminated errors. We rely on Ahmad for seamless data entry, and he consistently delivers.",
-      img: "/Avatar.png"
-    }
+  
   ];
 
 
@@ -113,8 +109,7 @@ export default function Home() {
            {
             testimonials.map((testimony,index)=><div className={slideNum===index?"slidein":"slideout"} key={index}>
               <div className={styles.testimony}>
-                <div className={styles.image}><Image alt='testimon profile image'
-                className='image' src={testimony.img} width={100} height={100}/></div>
+              
                 <div >
                  <p className={styles.name}>{testimony.name}</p>
                  <p className={styles.comment}>{testimony.comment}</p>
@@ -142,8 +137,9 @@ export default function Home() {
           <h2>Contact Me</h2>
           <div className={styles.formAndDetails}>
           <div className={styles.verticalDetails} >
-            <div><MdOutlineMailOutline/><p><strong>Email</strong></p><p>info@[Business Name].co.uk</p></div>
-          <div><MdOutlinePhoneIphone/><p><strong>Phone</strong></p><p>Mon-Fri from 9am to 5:30pm.</p><p>020 7486 1010‬</p></div>
+            <div><MdOutlineMailOutline/><p><strong>Email</strong></p><p>jamalkgt@hotmail.com </p></div>
+          <div><MdOutlinePhoneIphone/><p><strong>Phone</strong></p><p>07788691767
+</p></div>
           </div>
           <ContactForm/>
           </div>
