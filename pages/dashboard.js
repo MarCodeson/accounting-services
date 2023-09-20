@@ -15,67 +15,58 @@ const Dashboard = () => {
         lastname: "Sadeeq",
         service: "Budget Setting and Monitoring",
         date: "5/9/23",
-        message: (
-          <>
-            <p>Order Number:<br />1</p>
-            <p>Invoice fee: <br />£400</p>
-            <p>Method of payment: <br />Bank Transfer ****7697</p>
-          </>
-        )
+        message: [
+          "Order Number:\n1",
+          "Invoice fee:\n£400",
+          "Method of payment:\nBank Transfer ****7697"
+        ]
       },
       {
         firstname: "Ali",
         lastname: "Sherva",
         service: "Data Entry",
         date: "6/12/23",
-        message: (
-          <>
-            <p>Order Number:<br />2</p>
-            <p>Invoice fee:<br /> £150</p>
-            <p>Method of payment:<br /> Bank Transfer ****7697</p>
-          </>
-        )
+        message: [
+          "Order Number:\n2",
+          "Invoice fee:\n£150",
+          "Method of payment:\nBank Transfer ****7697"
+        ]
       },
       {
         firstname: "Sherry",
         lastname: "Sadeeq",
         service: "Creating Invoices",
         date: "7/5/23",
-        message: (
-          <>
-            <p>Order Number:<br />3</p>
-            <p>Invoice fee:<br /> £300</p>
-            <p>Method of payment:<br /> Cash</p>
-          </>
-        )
+        message: [
+          "Order Number:\n3",
+          "Invoice fee:\n£300",
+          "Method of payment:\nCash"
+        ]
       },
       {
         firstname: "Ali",
         lastname: "Affe",
         service: "Budget Setting and Monitoring",
         date: "8/18/23",
-        message: (
-          <>
-            <p>Order Number:<br />4</p>
-            <p>Invoice fee:<br /> £80</p>
-            <p>Method of payment:<br /> Cash</p>
-          </>
-        )
+        message: [
+          "Order Number:\n4",
+          "Invoice fee:\n£80",
+          "Method of payment:\nCash"
+        ]
       },
       {
         firstname: "Sabira",
         lastname: "Umtaz",
         service: "Data Entry",
         date: "6/12/23",
-        message: (
-          <>
-            <p>Order Number:<br />5</p>
-            <p>Invoice fee:<br /> £200</p>
-            <p>Method of payment:<br /> Bank Transfer ****7697</p>
-          </>
-        )
+        message: [
+          "Order Number:\n5",
+          "Invoice fee:\n£200",
+          "Method of payment:\nBank Transfer ****7697"
+        ]
       }
     ];
+    
     
     const pendingList = [
       
@@ -137,8 +128,8 @@ const Dashboard = () => {
               <div onClick={() => setViewMore(-1)} className={styles.closeIcon}><MdClose size={"4rem"} />Additional Details</div>
               {completedMode && viewMore > -1 ? (
                 <ul>
-                  {Object.values(completedList[viewMore]).map((value, index) => (
-                    <li key={index}  />
+                  {completedList[viewMore].message.map((value, index) => (
+                    <li key={index}>{value}</li>
                   ))}
                 </ul>
               ) : viewMore > -1 ? (
@@ -155,7 +146,9 @@ const Dashboard = () => {
                   <p><span className={styles.name}>{app.firstname + " " + app.lastname}</span><br />{app.service}</p>
                 </div>
                 <div className={styles.app_right}>
-                  {app.message}
+                <button className={styles.button} onClick={()=>{
+                    setViewMore(index)
+                  }}>View Details</button>
                 </div>
               </div>
             )) : pendingList.map((app, index) => (
