@@ -2,109 +2,23 @@ import Nav from '@/components/Nav'
 import {useState} from 'react'
 import styles from '../styles/dashboard.module.css'
 import {MdClose} from 'react-icons/md'
+import { fetchPendingList, fetchOrderList } from '../sanity/sanityApi';
+import { useEffect } from 'react';
 
-const Dashboard = () => {
+const Dashboard = ({meetingList,orderList}) => {
     const [password,setPassword] = useState('')
     const [entry, setEntry] = useState("")
     const [completedMode, setCompletedMode] = useState(false)
     const [viewMore, setViewMore] = useState(-1)
+    const [completedList,setCompletedList]= useState([])
+    const [pendingList, setPendingList] = useState([])
 
-    const completedList = [
-      {
-        firstname: "Hamzah",
-        lastname: "Sadeeq",
-        service: "Budget Setting and Monitoring",
-        date: "5/9/23",
-        message: [
-          "Order Number:\n1",
-          "Invoice fee:\n£400",
-          "Method of payment:\nBank Transfer ****7697"
-        ]
-      },
-      {
-        firstname: "Ali",
-        lastname: "Sherva",
-        service: "Data Entry",
-        date: "6/12/23",
-        message: [
-          "Order Number:\n2",
-          "Invoice fee:\n£150",
-          "Method of payment:\nBank Transfer ****7697"
-        ]
-      },
-      {
-        firstname: "Sherry",
-        lastname: "Sadeeq",
-        service: "Creating Invoices",
-        date: "7/5/23",
-        message: [
-          "Order Number:\n3",
-          "Invoice fee:\n£300",
-          "Method of payment:\nCash"
-        ]
-      },
-      {
-        firstname: "Ali",
-        lastname: "Affe",
-        service: "Budget Setting and Monitoring",
-        date: "8/18/23",
-        message: [
-          "Order Number:\n4",
-          "Invoice fee:\n£80",
-          "Method of payment:\nCash"
-        ]
-      },
-      {
-        firstname: "Sabira",
-        lastname: "Umtaz",
-        service: "Data Entry",
-        date: "6/12/23",
-        message: [
-          "Order Number:\n5",
-          "Invoice fee:\n£200",
-          "Method of payment:\nBank Transfer ****7697"
-        ]
-      }
-    ];
-    
-    
-    const pendingList = [
+    useEffect(()=>{
+      orderList&&setCompletedList(orderList)
+      meetingList&&setPendingList(meetingList)
       
-      {
-        firstname: "Isaq",
-        lastname: "Ahmed",
-        service: "Data Entry",
-        date: "5/9/23",
-        message: [
-          "Name: Isaq Ahmed",
-          "Phone: 07958931921",
-          "Email: isaqahmed@gmail.com"
-        ]
-      },
-      {
-        firstname: "Karam",
-        lastname: "Fagan",
-        service: "Budget Setting and Monitoring",
-        date: "5/9/23",
-        message: [
-          "Name: Karam Fagan",
-          "Phone: 07958563921",
-          "Email: karamfagan@hotmail.co.uk"
-        ]
-      },
-      {
-        firstname: "Joe",
-        lastname: "Gogarty",
-        service: "Budget Setting and Monitoring",
-        date: "5/9/23",
-        message: [
-          "Name: Joe Gogarty",
-          "Phone: 07458531921",
-          "Email: joegogarty@gmail.com"
-        ]
-      }
-      
-    ];
+    },[meetingList,orderList])
+    
     
     
     // Now, completedList and pendingList contain the desired data.
@@ -181,5 +95,24 @@ const Dashboard = () => {
     </>
   );
 };
+
+
+
+export async function getServerSideProps() {
+  const pendingList = await fetchPendingList();
+  const orderList = await fetchOrderList();
+
+  return {
+    props: {
+      meetingList:pendingList,
+      orderList,
+    },
+  };
+}
+
+
+
+
+
 
 export default Dashboard
